@@ -94,7 +94,7 @@ export const projects: Project[] = [
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB']
   },
   {
-    id: 'ecommerce-dashboard',
+    id: 'auxilium-school-varakkad',
     title: 'Auxilium School Varakkad ',
     category: 'Web Apps',
     description: 'Full-stack school management website with a responsive frontend, secure admin dashboard, MongoDB, Cloudinary, REST APIs, and email integration.',
@@ -105,11 +105,11 @@ export const projects: Project[] = [
       'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=70'
     ],
     features: ['Sales metrics', 'Performance cards', 'Responsive layout', 'Dark mode design'],
-    tech_stack: [{ name: 'React' }, { name: 'CSS Grid' }, { name: 'Chart.js' }],
+    tech_stack: [{ name: 'HTML' }, { name: 'CSS' }, { name: 'JavaScript' }, { name: 'Node.js' }, { name: 'MongoDB' }, { name: 'ejs' }, { name: 'bootstrap' }, { name: 'express' }, { name: 'restapi' }, { name: 'cloudinary' }, { name: 'wordpress' }],
     featured: 'feature',
-    live_url: '#',
+    live_url: 'https://auxiliumschoolvarakkad.in/',
     github_url: '#',
-    tags: ['React', 'Dashboard', 'Analytics']
+    tags: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB']
   },
   {
     id: 'Mariya Homes',
@@ -123,11 +123,11 @@ export const projects: Project[] = [
       'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=70'
     ],
     features: ['Color system', 'Typography scale', 'Reusable components', 'Design documentation'],
-    tech_stack: [{ name: 'Figma' }, { name: 'CSS' }, { name: 'Design Tokens' }],
+    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
     featured: 'feature',
-    live_url: '#',
+    live_url: 'https://mariahomes.in/',
     github_url: '#',
-    tags: ['UI', 'Design', 'Components']
+    tags: ['React', 'Node.js', 'Express.js', 'MongoDB']
   },
   {
     id: 'landing-page',
