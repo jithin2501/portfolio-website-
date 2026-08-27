@@ -108,8 +108,16 @@ export const projects: Project[] = [
     long_desc: 'Production-ready full-stack web application for Auxilium School Varakkad with a responsive website, secure admin dashboard, MongoDB, Cloudinary, REST APIs, and email notifications.',
     image: '/project/school.jpg',
     images: [
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=70',
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=70'
+      '/images/auxilium_school/landing_page.png',
+      '/images/auxilium_school/principal_message.png',
+      '/images/auxilium_school/academics.png',
+      '/images/auxilium_school/facility.png',
+      '/images/auxilium_school/gallery.png',
+      '/images/auxilium_school/why.png',
+      '/images/auxilium_school/subject.png',
+      '/images/auxilium_school/contact.png',
+      '/images/auxilium_school/application.png',
+      '/images/auxilium_school/user_management.png'
     ],
     features: ['Sales metrics', 'Performance cards', 'Responsive layout', 'Dark mode design'],
     tech_stack: [{ name: 'HTML' }, { name: 'CSS' }, { name: 'JavaScript' }, { name: 'Node.js' }, { name: 'MongoDB' }, { name: 'ejs' }, { name: 'bootstrap' }, { name: 'express' }, { name: 'restapi' }, { name: 'cloudinary' }, { name: 'wordpress' }],
