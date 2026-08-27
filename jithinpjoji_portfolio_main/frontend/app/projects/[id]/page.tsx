@@ -1,8 +1,8 @@
 'use client';
-import React, { use, useState } from 'react';
+import React, { use, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
-  ExternalLink, CheckCircle2, ArrowLeft, Info
+  ExternalLink, CheckCircle2, ArrowLeft, Info, Maximize2, X, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { projects as staticProjects } from '../../../data/staticData';
 import '../../style/ProjectDetail.css';
@@ -33,6 +33,21 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
   const project = staticProjects.find((item) => item.id === resolvedParams.id) ?? staticProjects[0];
 
   const [activeThumb, setActiveThumb] = useState(0);
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const images = project?.images && project.images.length > 0 
+    ? project.images 
+    : [project?.image || ''];
+
+  // Auto-play slideshow every 3.5 seconds
+  useEffect(() => {
+    if (isPaused || images.length <= 1) return;
+    const interval = setInterval(() => {
+      setActiveThumb((prev) => (prev + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [isPaused, images.length]);
 
   if (!project) {
     return (
@@ -52,12 +67,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
 
   const categoryLabel = project.category ? project.category.toUpperCase() : "E-COMMERCE PLATFORM";
   const title = project.title || "Sumathi Trends";
-  const subtitle = project.subtitle || "Ecommerce Clothing Website";
   const description = project.long_desc || project.description || "A full-stack e-commerce platform for a modern clothing brand.";
-  
-  const images = project.images && project.images.length > 0 
-    ? project.images 
-    : [project.image, project.image, project.image, project.image, project.image];
   
   // Format features into string list or array
   const rawFeatures = project.features || [
@@ -66,9 +76,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
     "Shopping Cart & Wishlist",
     "Secure Checkout with Payment Gateway",
     "Order Tracking",
-    "Admin Dashboard",
-    "Product & Order Management",
-    "Analytics & Reports"
+    "Admin Dashboard"
   ];
 
   const featuresList = rawFeatures.map((f: any) => typeof f === 'string' ? f : (f.title || f.desc || String(f)));
@@ -76,7 +84,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
   // Tech stack items
   const techStack = project.tech_stack && project.tech_stack.length > 0
     ? project.tech_stack.map(t => t.name)
-    : ["React.js", "Node.js", "Express.js", "MongoDB", "Firebase", "Razorpay", "AWS S3", "Docker", "Nginx"];
+    : ["React.js", "Node.js", "Express.js", "MongoDB"];
 
   const liveUrl = project.live_url || "#";
   const githubUrl = project.github_url || "#";
@@ -91,13 +99,25 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
         <div className="project-detail-card">
           
           {/* Left Column - Image Showcase */}
-          <div className="pd-left-showcase">
+          <div 
+            className="pd-left-showcase"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <div className="pd-main-image-wrapper">
               <img 
                 src={currentDisplayImg} 
                 alt={title} 
                 className="pd-main-full-img" 
               />
+              {/* Fullscreen Expand Button in Top Right */}
+              <button 
+                className="pd-fullscreen-btn" 
+                onClick={() => setIsFullScreen(true)}
+                title="View Fullscreen"
+              >
+                <Maximize2 size={18} />
+              </button>
             </div>
 
             {/* Thumbnail Row - Interactive Thumbnail Carousel */}
@@ -167,6 +187,59 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
         </div>
 
       </div>
+
+      {/* Floating Centered Fullscreen Image Modal */}
+      {isFullScreen && (
+        <div className="pd-modal-overlay" onClick={() => setIsFullScreen(false)}>
+          <div className="pd-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="pd-modal-close-btn" 
+              onClick={() => setIsFullScreen(false)}
+              title="Close Fullscreen"
+            >
+              <X size={22} />
+            </button>
+
+            {/* Prev Arrow */}
+            {images.length > 1 && (
+              <button 
+                className="pd-modal-nav-btn pd-modal-prev" 
+                onClick={() => setActiveThumb((prev) => (prev - 1 + images.length) % images.length)}
+              >
+                <ChevronLeft size={28} />
+              </button>
+            )}
+
+            <div className="pd-modal-img-container">
+              <img src={currentDisplayImg} alt={title} className="pd-modal-img" />
+            </div>
+
+            {/* Next Arrow */}
+            {images.length > 1 && (
+              <button 
+                className="pd-modal-nav-btn pd-modal-next" 
+                onClick={() => setActiveThumb((prev) => (prev + 1) % images.length)}
+              >
+                <ChevronRight size={28} />
+              </button>
+            )}
+
+            {/* Modal Bottom Thumbnail Bar */}
+            <div className="pd-modal-thumbs-bar">
+              {images.map((img, idx) => (
+                <div 
+                  key={idx} 
+                  className={`pd-modal-thumb ${activeThumb === idx ? 'active' : ''}`}
+                  onClick={() => setActiveThumb(idx)}
+                >
+                  <img src={img} alt={`Modal thumb ${idx + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
