@@ -40,14 +40,14 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
     ? project.images 
     : [project?.image || ''];
 
-  // Auto-play slideshow every 3.5 seconds
+  // Auto-play slideshow every 3.5 seconds (only when not paused and modal is closed)
   useEffect(() => {
-    if (isPaused || images.length <= 1) return;
+    if (isPaused || isFullScreen || images.length <= 1) return;
     const interval = setInterval(() => {
       setActiveThumb((prev) => (prev + 1) % images.length);
     }, 3500);
     return () => clearInterval(interval);
-  }, [isPaused, images.length]);
+  }, [isPaused, isFullScreen, images.length]);
 
   if (!project) {
     return (
@@ -193,9 +193,14 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
         <div className="pd-modal-overlay" onClick={() => setIsFullScreen(false)}>
           <div className="pd-modal-content" onClick={(e) => e.stopPropagation()}>
             <button 
+              type="button"
               className="pd-modal-close-btn" 
-              onClick={() => setIsFullScreen(false)}
-              title="Close Fullscreen"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsFullScreen(false);
+              }}
+              aria-label="Close"
+              title="Close"
             >
               <X size={22} />
             </button>
@@ -203,8 +208,13 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
             {/* Prev Arrow */}
             {images.length > 1 && (
               <button 
+                type="button"
                 className="pd-modal-nav-btn pd-modal-prev" 
-                onClick={() => setActiveThumb((prev) => (prev - 1 + images.length) % images.length)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveThumb((prev) => (prev - 1 + images.length) % images.length);
+                }}
+                aria-label="Previous image"
               >
                 <ChevronLeft size={28} />
               </button>
@@ -217,8 +227,13 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
             {/* Next Arrow */}
             {images.length > 1 && (
               <button 
+                type="button"
                 className="pd-modal-nav-btn pd-modal-next" 
-                onClick={() => setActiveThumb((prev) => (prev + 1) % images.length)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveThumb((prev) => (prev + 1) % images.length);
+                }}
+                aria-label="Next image"
               >
                 <ChevronRight size={28} />
               </button>
@@ -230,7 +245,10 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
                 <div 
                   key={idx} 
                   className={`pd-modal-thumb ${activeThumb === idx ? 'active' : ''}`}
-                  onClick={() => setActiveThumb(idx)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveThumb(idx);
+                  }}
                 >
                   <img src={img} alt={`Modal thumb ${idx + 1}`} />
                 </div>
