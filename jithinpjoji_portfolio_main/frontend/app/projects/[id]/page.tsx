@@ -100,12 +100,9 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
               />
             </div>
 
-            {/* Thumbnail Row - Exactly 5 Small Screens */}
+            {/* Thumbnail Row - Interactive Thumbnail Carousel */}
             <div className="pd-thumbnails-row">
-              {(images.length >= 5 ? images.slice(0, 5) : [
-                ...images,
-                ...Array(5 - images.length).fill(currentDisplayImg)
-              ]).map((img, idx) => (
+              {images.map((img, idx) => (
                 <div 
                   key={idx} 
                   className={`pd-thumb-card ${activeThumb === idx ? 'active' : ''}`}
