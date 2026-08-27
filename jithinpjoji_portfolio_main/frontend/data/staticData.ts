@@ -78,7 +78,7 @@ export const projects: Project[] = [
     category: 'Web Apps',
     description: 'A complete full-stack web application for Sky Dental Hospital built with React.js, Node.js, Express, MongoDB, and Cloudinary.',
     long_desc: 'A full-stack dental hospital website built with React.js, Node.js, Express, MongoDB, and Cloudinary. Features appointment booking, service management, patient reviews, and a secure admin dashboard.',
-    image: '/images/sky_dental/landing_page.png',
+    image: '/project/dental.jpg',
     images: [
       '/images/sky_dental/landing_page.png',
       '/images/sky_dental/about_us.png',
