@@ -110,8 +110,38 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
                 alt={title} 
                 className="pd-main-full-img" 
               />
+
+              {/* Prev / Next Arrows on Main Image Box */}
+              {images.length > 1 && (
+                <>
+                  <button 
+                    type="button"
+                    className="pd-main-nav-btn pd-main-prev" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveThumb((prev) => (prev - 1 + images.length) % images.length);
+                    }}
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={22} />
+                  </button>
+                  <button 
+                    type="button"
+                    className="pd-main-nav-btn pd-main-next" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveThumb((prev) => (prev + 1) % images.length);
+                    }}
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={22} />
+                  </button>
+                </>
+              )}
+
               {/* Fullscreen Expand Button in Top Right */}
               <button 
+                type="button"
                 className="pd-fullscreen-btn" 
                 onClick={() => setIsFullScreen(true)}
                 title="View Fullscreen"

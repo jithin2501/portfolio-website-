@@ -186,6 +186,57 @@
     transition: none !important;
 }
 
+/* Navigation Arrows on Main Showcase Box */
+.pd-main-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: none !important;
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pd-main-nav-btn:hover {
+    background: #2563eb;
+    border-color: #60a5fa;
+}
+
+.pd-main-nav-btn:active,
+.pd-modal-nav-btn:active,
+.pd-fullscreen-btn:active,
+.pd-modal-close-btn:active {
+    transform: translateY(-50%) !important;
+    top: 50% !important;
+    margin: 0 !important;
+    outline: none !important;
+}
+
+.pd-modal-close-btn:active {
+    transform: none !important;
+    top: 14px !important;
+}
+
+.pd-main-prev {
+    left: 12px;
+}
+
+.pd-main-next {
+    right: 12px;
+}
+
 /* Fixed Navigation Arrows in Modal */
 .pd-modal-nav-btn {
     position: absolute;
@@ -203,6 +254,7 @@
     cursor: pointer;
     z-index: 50;
     transition: none !important;
+    user-select: none;
 }
 
 .pd-modal-nav-btn:hover {

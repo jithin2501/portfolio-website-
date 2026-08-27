@@ -109,15 +109,15 @@ export const projects: Project[] = [
     image: '/project/school.jpg',
     images: [
       '/images/auxilium_school/landing_page.png',
-      '/images/auxilium_school/principal_message.png',
       '/images/auxilium_school/academics.png',
       '/images/auxilium_school/facility.png',
-      '/images/auxilium_school/gallery.png',
       '/images/auxilium_school/why.png',
       '/images/auxilium_school/subject.png',
       '/images/auxilium_school/contact.png',
       '/images/auxilium_school/application.png',
-      '/images/auxilium_school/user_management.png'
+      '/images/auxilium_school/user_management.png',
+      '/images/auxilium_school/principal_message.png',
+      '/images/auxilium_school/gallery.png'
     ],
     features: ['Sales metrics', 'Performance cards', 'Responsive layout', 'Dark mode design'],
     tech_stack: [{ name: 'HTML' }, { name: 'CSS' }, { name: 'JavaScript' }, { name: 'Node.js' }, { name: 'MongoDB' }, { name: 'ejs' }, { name: 'bootstrap' }, { name: 'express' }, { name: 'restapi' }, { name: 'cloudinary' }, { name: 'wordpress' }],
