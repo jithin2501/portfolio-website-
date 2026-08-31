@@ -215,8 +215,7 @@
 }
 
 .pd-main-nav-btn:active,
-.pd-modal-nav-btn:active,
-.pd-fullscreen-btn:active {
+.pd-modal-nav-btn:active {
     transform: translateY(-50%) !important;
     top: 50% !important;
     margin: 0 !important;
@@ -224,6 +223,7 @@
     transition: none !important;
 }
 
+.pd-fullscreen-btn:active,
 .pd-modal-close-btn:active {
     transform: none !important;
     top: 14px !important;
