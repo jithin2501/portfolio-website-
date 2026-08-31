@@ -127,7 +127,7 @@ export const projects: Project[] = [
     tags: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB']
   },
   {
-    id: 'Mariya Homes',
+    id: 'mariya-homes',
     title: 'Mariya Homes',
     category: 'Web Apps',
     description: 'A full-stack real estate website featuring property listings, detailed pages, project portfolios, and a secure admin dashboard.',
