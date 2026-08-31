@@ -134,8 +134,13 @@ export const projects: Project[] = [
     long_desc: 'A full-stack real estate web application built with React.js, Node.js, Express, and MongoDB, featuring property listings, project portfolios, contact forms, and a secure admin dashboard.',
     image: '/project/real_estate.webp',
     images: [
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=70',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=70'
+      '/images/mariahomes/landing_page.png',
+      '/images/mariahomes/about_us.png',
+      '/images/mariahomes/services.png',
+      '/images/mariahomes/contact.png',
+      '/images/mariahomes/reviews.png',
+      '/images/mariahomes/our_cons_process.png',
+      '/images/mariahomes/renovation_process.png'
     ],
     features: ['Color system', 'Typography scale', 'Reusable components', 'Design documentation'],
     tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
