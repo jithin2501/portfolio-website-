@@ -250,7 +250,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
                 }}
                 aria-label="Previous image"
               >
-                <ChevronLeft size={28} />
+                <ChevronLeft size={22} />
               </button>
             )}
 
@@ -269,7 +269,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
                 }}
                 aria-label="Next image"
               >
-                <ChevronRight size={28} />
+                <ChevronRight size={22} />
               </button>
             )}
 

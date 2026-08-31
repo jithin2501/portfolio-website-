@@ -4,8 +4,6 @@
     min-height: 100vh;
     padding: 115px 0 60px;
     background: transparent;
-    position: relative;
-    z-index: 10;
 }
 
 .detail-container {
@@ -159,7 +157,7 @@
     justify-content: center;
     cursor: pointer;
     z-index: 100;
-    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.5);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
 }
 
 .pd-modal-close-btn:hover {
@@ -246,8 +244,8 @@
     background: rgba(30, 41, 59, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
