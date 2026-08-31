@@ -104,7 +104,11 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="pd-main-image-wrapper">
+            <div 
+              className="pd-main-image-wrapper"
+              onClick={() => setIsFullScreen(true)}
+              style={{ cursor: 'pointer' }}
+            >
               <img 
                 src={currentDisplayImg} 
                 alt={title} 
