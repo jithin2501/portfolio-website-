@@ -183,6 +183,44 @@ export const projects: Project[] = [
     live_url: '#',
     github_url: '#',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Vite', 'Razorpay']
+  },
+  {
+    id: 'zentrivo-technologies',
+    title: 'Zentrivo Technologies',
+    category: 'Web Apps',
+    description: 'Company Website & Admin Dashboard Platform.',
+    long_desc: 'Full-stack marketing site — landing page, services, portfolio, about, and contact — paired with a secured admin dashboard for managing contact-form submissions and admin accounts.',
+    image: '/project/Software.jpg',
+    images: [
+      '/images/software/landing.png',
+      '/images/software/more_aboutus.png',
+      '/images/software/service.png',
+      '/images/software/seo_landing.png',
+      '/images/software/web_landing_page.png',
+      '/images/software/gallery.png',
+      '/images/software/parterns.png',
+      '/images/software/contact1.png',
+      '/images/software/contact2.png',
+      '/images/software/login_page.png',
+      '/images/software/user_admin.png',
+      '/images/software/contact_admin.png',
+      '/images/software/core_values.png',
+      '/images/software/design.png',
+      '/images/software/design_process.png',
+      '/images/software/digital_marketing.png',
+      '/images/software/mobile_landing.png',
+      '/images/software/portfolio_landing.png',
+      '/images/software/process.png',
+      '/images/software/projects.png',
+      '/images/software/review.png',
+      '/images/software/simple_process.png'
+    ],
+    features: ['Animated landing page', 'Services showcase', 'Admin Dashboard', 'Role-based access'],
+    tech_stack: [{ name: 'React' }, { name: 'Tailwind CSS' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
+    featured: 'feature',
+    live_url: '#',
+    github_url: '#',
+    tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind']
   }
 ];
 
