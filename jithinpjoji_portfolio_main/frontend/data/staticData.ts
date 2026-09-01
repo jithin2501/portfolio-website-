@@ -150,22 +150,39 @@ export const projects: Project[] = [
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB']
   },
   {
-    id: 'landing-page',
-    title: 'Marketing Landing Page',
-    category: 'Others',
-    description: 'A conversion-optimized landing page with animated sections, testimonials, and call-to-action design.',
-    long_desc: 'Built a responsive landing page designed for lead capture and presenting a polished product story. Includes mobile-first layout and fast load performance.',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=70',
+    id: 'trendora-trends',
+    title: 'Trendora Trends',
+    category: 'Web Apps',
+    description: "Premium Children's Clothing E-Commerce Platform.",
+    long_desc: "Full-stack web application for discovering, browsing, and purchasing premium children's clothing — with a complete admin dashboard for managing every aspect of the store.",
+    image: '/project/trends.jpg',
     images: [
-      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=70',
-      'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=70'
+      '/images/trends/landing.png',
+      '/images/trends/aboutus.png',
+      '/images/trends/category.png',
+      '/images/trends/collection.png',
+      '/images/trends/collection_details.png',
+      '/images/trends/collection_feature.png',
+      '/images/trends/cart.png',
+      '/images/trends/payment.png',
+      '/images/trends/user_account.png',
+      '/images/trends/address.png',
+      '/images/trends/client_logins.png',
+      '/images/trends/client_login.png',
+      '/images/trends/contact.png',
+      '/images/trends/review_page.png',
+      '/images/trends/review_qr.png',
+      '/images/trends/user.png',
+      '/images/trends/review_management.png',
+      '/images/trends/review_admin.png',
+      '/images/trends/contact_admin.png'
     ],
-    features: ['Lead capture', 'Animated highlights', 'Responsive CTA', 'Performance optimized'],
-    tech_stack: [{ name: 'Next.js' }, { name: 'CSS' }, { name: 'Responsive Design' }],
-    featured: 'freelancing',
+    features: ['Customer-Facing Features', 'Admin Dashboard', 'Payment Integration', 'QR Code Reviews'],
+    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }, { name: 'Vite' }],
+    featured: 'feature',
     live_url: '#',
     github_url: '#',
-    tags: ['Landing Page', 'Marketing', 'Responsive']
+    tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Vite', 'Razorpay']
   }
 ];
 
