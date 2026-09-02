@@ -22,7 +22,7 @@ const categories = [
 interface Project {
     id: string;
     name: string;
-    category: string;
+    categories: string[];
     categoryLabel: string;
     desc: string;
     tech: string[];
@@ -30,13 +30,14 @@ interface Project {
 }
 
 /* Helper to map backend category strings to local filter ids */
-const getNormalizedCategory = (cat: string): string => {
-    if (!cat) return 'others';
+const getNormalizedCategories = (cat: string): string[] => {
+    if (!cat) return ['others'];
     const c = cat.toLowerCase();
-    if (c.includes('web')) return 'web-app';
-    if (c.includes('commerce') || c.includes('store') || c.includes('shop')) return 'e-commerce';
-    if (c.includes('design') || c.includes('ui') || c.includes('ux')) return 'design';
-    return 'others';
+    const categories: string[] = [];
+    if (c.includes('web')) categories.push('web-app');
+    if (c.includes('commerce') || c.includes('store') || c.includes('shop')) categories.push('e-commerce');
+    if (c.includes('design') || c.includes('ui') || c.includes('ux')) categories.push('design');
+    return categories.length > 0 ? categories : ['others'];
 };
 
 /* ── COMPONENTS ───────────────────────────────── */
@@ -94,7 +95,7 @@ export default function Projects() {
         .map((p) => ({
             id: p.id,
             name: p.title,
-            category: getNormalizedCategory(p.category || ''),
+            categories: getNormalizedCategories(p.category || ''),
             categoryLabel: p.category || 'Others',
             desc: p.description,
             tech: p.tech_stack?.map((t) => t.name) || p.tags || [],
@@ -118,7 +119,7 @@ export default function Projects() {
     }, []);
 
     const filteredProjects = projects.filter(p => 
-        activeFilter === 'all' || p.category === activeFilter
+        activeFilter === 'all' || p.categories.includes(activeFilter)
     );
 
     return (

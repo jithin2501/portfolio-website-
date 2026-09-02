@@ -152,7 +152,7 @@ export const projects: Project[] = [
   {
     id: 'trendora-trends',
     title: 'Trendora Trends',
-    category: 'Web Apps',
+    category: 'Web Apps, E-Commerce',
     description: "Premium Children's Clothing E-Commerce Platform.",
     long_desc: "Full-stack web application for discovering, browsing, and purchasing premium children's clothing — with a complete admin dashboard for managing every aspect of the store.",
     image: '/project/trends.jpg',
