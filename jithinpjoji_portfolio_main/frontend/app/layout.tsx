@@ -33,6 +33,47 @@ export default function RootLayout({
         />
       </head>
       <body style={{ background: 'transparent', color: 'var(--text)' }}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Disable right-click
+              document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+              });
+
+              // Disable image dragging
+              document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                  e.preventDefault();
+                }
+              });
+
+              // Block DevTools shortcuts
+              document.addEventListener('keydown', function(e) {
+                // F12
+                if (e.key === 'F12' || e.keyCode === 123) {
+                  e.preventDefault();
+                }
+                // Ctrl+Shift+I or Cmd+Option+I
+                if ((e.ctrlKey || e.metaKey) && (e.shiftKey || e.altKey) && (e.key === 'I' || e.key === 'i')) {
+                  e.preventDefault();
+                }
+                // Ctrl+Shift+C or Cmd+Option+C
+                if ((e.ctrlKey || e.metaKey) && (e.shiftKey || e.altKey) && (e.key === 'C' || e.key === 'c')) {
+                  e.preventDefault();
+                }
+                // Ctrl+Shift+J or Cmd+Option+J
+                if ((e.ctrlKey || e.metaKey) && (e.shiftKey || e.altKey) && (e.key === 'J' || e.key === 'j')) {
+                  e.preventDefault();
+                }
+                // Ctrl+U or Cmd+U (View Source)
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
+                  e.preventDefault();
+                }
+              });
+            `
+          }}
+        />
         <HeroCanvas />
         <MainLayout>
           {children}
