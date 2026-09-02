@@ -70,10 +70,34 @@ export default function RootLayout({
                 if ((e.ctrlKey || e.metaKey) && (e.key === 'U' || e.key === 'u')) {
                   e.preventDefault();
                 }
+                // Print Screen key
+                if (e.key === 'PrintScreen' || e.keyCode === 44) {
+                  e.preventDefault();
+                  navigator.clipboard.writeText(''); // Try to clear clipboard
+                }
+                
+                // Ctrl+P or Cmd+P (Print)
+                if ((e.ctrlKey || e.metaKey) && (e.key === 'P' || e.key === 'p')) {
+                  e.preventDefault();
+                }
+              });
+
+              // Clear clipboard if they try to use print screen (works in some browsers)
+              document.addEventListener('keyup', function(e) {
+                if (e.key === 'PrintScreen' || e.keyCode === 44) {
+                  navigator.clipboard.writeText(''); 
+                }
               });
             `
           }}
         />
+        <style dangerouslySetInnerHTML={{__html: `
+          @media print {
+            body {
+              display: none !important;
+            }
+          }
+        `}} />
         <HeroCanvas />
         <MainLayout>
           {children}
