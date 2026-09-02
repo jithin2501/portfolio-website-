@@ -13,7 +13,6 @@ const categories = [
   { id: 'All', label: 'All Projects', icon: LayoutGrid },
   { id: 'Web Apps', label: 'Web Apps', icon: Laptop },
   { id: 'E-Commerce', label: 'E-Commerce', icon: ShoppingCart },
-  { id: 'Design', label: 'Design', icon: Palette },
   { id: 'Others', label: 'Others', icon: MoreHorizontal },
 ];
 

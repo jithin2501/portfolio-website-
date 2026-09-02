@@ -68,6 +68,7 @@ export type Project = {
   featured?: string;
   live_url?: string;
   github_url?: string;
+  figma_url?: string;
   tags?: string[];
 };
 
@@ -77,7 +78,7 @@ export const projects: Project[] = [
     title: 'Sky Dental Hospital',
     category: 'Web Apps',
     description: 'A complete full-stack web application for Sky Dental Hospital built with React.js, Node.js, Express, MongoDB, and Cloudinary.',
-    long_desc: 'A full-stack dental hospital website built with React.js, Node.js, Express, MongoDB, and Cloudinary. Features appointment booking, service management, patient reviews, and a secure admin dashboard.',
+    long_desc: 'Full-stack hospital website for Sky Dental Hospital — built with React, Node.js, Express, and MongoDB. Features service pages, doctor profiles, patient reviews, gallery, admin dashboard, analytics, and Docker-based deployment with Nginx and SSL.',
     image: '/project/dental.jpg',
     images: [
       '/images/sky_dental/landing_page.png',
@@ -93,8 +94,8 @@ export const projects: Project[] = [
       '/images/sky_dental/get_in_touch.png',
       '/images/sky_dental/user_management.png'
     ],
-    features: ['Appointment Booking', 'Service Management', 'Patient Reviews', 'Admin Dashboard'],
-    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
+    features: ['Complete Hospital Website', 'Online Appointment & Patient Interaction', 'Secure Admin Management System', 'Real-Time Analytics & Cloud Management'],
+    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }, { name: 'AWS' }, { name: 'Docker' }],
     featured: 'feature',
     live_url: 'http://skydentalhospital.in/',
     github_url: 'https://github.com/jithin2501/Sky-Dental-Hospital.git',
@@ -105,7 +106,7 @@ export const projects: Project[] = [
     title: 'Auxilium School Varakkad ',
     category: 'Web Apps',
     description: 'Full-stack school management website with a responsive frontend, secure admin dashboard, MongoDB, Cloudinary, REST APIs, and email integration.',
-    long_desc: 'Production-ready full-stack web application for Auxilium School Varakkad with a responsive website, secure admin dashboard, MongoDB, Cloudinary, REST APIs, and email notifications.',
+    long_desc: 'Full-stack web application for an ICSE-affiliated school — responsive SPA frontend, secure admin dashboard, RESTful API, MongoDB, Cloudinary media storage, and automated email notifications. Built with Node.js, Express, and Passport.js. Deployed on Render.',
     image: '/project/school.jpg',
     images: [
       '/images/auxilium_school/landing_page.png',
@@ -119,8 +120,8 @@ export const projects: Project[] = [
       '/images/auxilium_school/principal_message.png',
       '/images/auxilium_school/gallery.png'
     ],
-    features: ['Sales metrics', 'Performance cards', 'Responsive layout', 'Dark mode design'],
-    tech_stack: [{ name: 'HTML' }, { name: 'CSS' }, { name: 'JavaScript' }, { name: 'Node.js' }, { name: 'MongoDB' }, { name: 'ejs' }, { name: 'bootstrap' }, { name: 'express' }, { name: 'restapi' }, { name: 'cloudinary' }, { name: 'wordpress' }],
+    features: ['Full-Stack School Website', 'Online Admission & Contact Management', 'Secure Admin Dashboard & Content Management', 'Cloud-Based Media Storage & Email Notifications'],
+    tech_stack: [{ name: 'HTML' }, { name: 'CSS' }, { name: 'JavaScript' }, { name: 'Node.js' }, { name: 'MongoDB' }, { name: 'ejs' }, { name: 'bootstrap' }, { name: 'express' }, { name: 'restapi' }, { name: 'cloudinary' }],
     featured: 'feature',
     live_url: 'https://auxiliumschoolvarakkad.in/',
     github_url: '#',
@@ -131,7 +132,7 @@ export const projects: Project[] = [
     title: 'Mariya Homes',
     category: 'Web Apps',
     description: 'A full-stack real estate website featuring property listings, detailed pages, project portfolios, and a secure admin dashboard.',
-    long_desc: 'A full-stack real estate web application built with React.js, Node.js, Express, and MongoDB, featuring property listings, project portfolios, contact forms, and a secure admin dashboard.',
+    long_desc: 'Full-stack real estate website for Mariya Homes — built with React, Node.js, Express, and MongoDB. Features property listings, gallery, admin dashboard, analytics, and Cloudinary media management.',
     image: '/project/real_estate.webp',
     images: [
       '/images/mariahomes/landing_page.png',
@@ -142,8 +143,8 @@ export const projects: Project[] = [
       '/images/mariahomes/our_cons_process.png',
       '/images/mariahomes/renovation_process.png'
     ],
-    features: ['Color system', 'Typography scale', 'Reusable components', 'Design documentation'],
-    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
+    features: ['Property Listing & Search', 'Property Details & Portfolio', 'Admin Dashboard & Content Management', 'Visitor Analytics & Contact Management'],
+    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }, { name: 'Render' }, { name: 'Cloudinary' }, { name: 'REST API' }],
     featured: 'feature',
     live_url: 'https://mariahomes.in/',
     github_url: '#',
@@ -154,7 +155,7 @@ export const projects: Project[] = [
     title: 'Trendora Trends',
     category: 'Web Apps, E-Commerce',
     description: "Premium Children's Clothing E-Commerce Platform.",
-    long_desc: "Full-stack web application for discovering, browsing, and purchasing premium children's clothing — with a complete admin dashboard for managing every aspect of the store.",
+    long_desc: "Full-stack children's clothing e-commerce platform with Razorpay payments, order tracking, gift orders, photo reviews, and a role-based admin dashboard. Built with React 18, Node.js, Express, MongoDB, and Cloudinary.",
     image: '/project/trends.jpg',
     images: [
       '/images/trends/landing.png',
@@ -177,11 +178,12 @@ export const projects: Project[] = [
       '/images/trends/review_admin.png',
       '/images/trends/contact_admin.png'
     ],
-    features: ['Customer-Facing Features', 'Admin Dashboard', 'Payment Integration', 'QR Code Reviews'],
-    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }, { name: 'Vite' }],
+    features: ['Product & Collection Management', 'Shopping Cart, Wishlist & Checkout', 'Razorpay Payment & Order Tracking', 'Admin Dashboard & Customer Management'],
+    tech_stack: [{ name: 'React' }, { name: 'Next.js' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }, { name: 'Razorpay' }, { name: 'Shiprocket' }, { name: 'Firebase' }, { name: 'AWS' }, { name: 'S3' }, { name: 'Docker' }],
     featured: 'feature',
     live_url: '#',
     github_url: '#',
+    figma_url: 'https://www.figma.com/design/NzBZ4xkwBdPgUBuIjWADuQ/Sumathi-Trends?t=uGnRVzI1JU2yL7hI-1',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Vite', 'Razorpay']
   },
   {
@@ -220,6 +222,7 @@ export const projects: Project[] = [
     featured: 'feature',
     live_url: '#',
     github_url: '#',
+    figma_url: 'https://www.figma.com/design/QbDTqUsNtC2zli2PG9AUBU/software-companey?node-id=0-1&t=uGnRVzI1JU2yL7hI-1',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind']
   },
   {

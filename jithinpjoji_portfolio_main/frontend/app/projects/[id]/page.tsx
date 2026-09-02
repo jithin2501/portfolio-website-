@@ -88,6 +88,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
 
   const liveUrl = project.live_url || "#";
   const githubUrl = project.github_url || "#";
+  const figmaUrl = project.figma_url;
 
   const currentDisplayImg = images[activeThumb] || project.image || images[0];
 
@@ -215,6 +216,11 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
               <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-secondary">
                 View on GitHub <i className="fab fa-github" />
               </a>
+              {figmaUrl && (
+                <a href={figmaUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-secondary" style={{ backgroundColor: '#F24E1E', color: 'white', border: 'none' }}>
+                  Figma Design <i className="fab fa-figma" />
+                </a>
+              )}
             </div>
 
           </div>
