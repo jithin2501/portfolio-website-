@@ -124,12 +124,6 @@ export default function ProjectsPage() {
                       View Details
                       <ArrowRight size={16} />
                     </Link>
-                    {githubUrl && githubUrl !== '#' && (
-                      <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="github-btn-new">
-                        GitHub
-                        <i className="fab fa-github" style={{ fontSize: '18px' }} />
-                      </a>
-                    )}
                   </div>
                 </div>
               );

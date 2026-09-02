@@ -77,7 +77,7 @@ export const projects: Project[] = [
     id: 'skydental',
     title: 'Sky Dental Hospital',
     category: 'Web Apps',
-    description: 'A complete full-stack web application for Sky Dental Hospital built with React.js, Node.js, Express, MongoDB, and Cloudinary.',
+    description: 'A complete full-stack web application for Sky Dental Hospital built with React, Node.js, Express, and MongoDB. Features appointment booking, patient reviews, and admin dashboard.',
     long_desc: 'Full-stack hospital website for Sky Dental Hospital — built with React, Node.js, Express, and MongoDB. Features service pages, doctor profiles, patient reviews, gallery, admin dashboard, analytics, and Docker-based deployment with Nginx and SSL.',
     image: '/project/dental.jpg',
     images: [
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     id: 'auxilium-school-varakkad',
     title: 'Auxilium School Varakkad ',
     category: 'Web Apps',
-    description: 'Full-stack school management website with a responsive frontend, secure admin dashboard, MongoDB, Cloudinary, REST APIs, and email integration.',
+    description: 'Full-stack school management website with a responsive SPA frontend, secure admin dashboard, RESTful APIs, MongoDB, and automated email notifications.',
     long_desc: 'Full-stack web application for an ICSE-affiliated school — responsive SPA frontend, secure admin dashboard, RESTful API, MongoDB, Cloudinary media storage, and automated email notifications. Built with Node.js, Express, and Passport.js. Deployed on Render.',
     image: '/project/school.jpg',
     images: [
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     id: 'mariya-homes',
     title: 'Mariya Homes',
     category: 'Web Apps',
-    description: 'A full-stack real estate website featuring property listings, detailed pages, project portfolios, and a secure admin dashboard.',
+    description: 'Full-stack real estate website for Mariya Homes built with React, Node.js, Express, and MongoDB. Features property listings, gallery, and admin dashboard.',
     long_desc: 'Full-stack real estate website for Mariya Homes — built with React, Node.js, Express, and MongoDB. Features property listings, gallery, admin dashboard, analytics, and Cloudinary media management.',
     image: '/project/real_estate.webp',
     images: [
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     id: 'trendora-trends',
     title: 'Trendora Trends',
     category: 'Web Apps, E-Commerce',
-    description: "Premium Children's Clothing E-Commerce Platform.",
+    description: "Full-stack children's clothing e-commerce platform with Razorpay payments, order tracking, and a secure admin dashboard. Built with Next.js, React, Node.js, and MongoDB.",
     long_desc: "Full-stack children's clothing e-commerce platform with Razorpay payments, order tracking, gift orders, photo reviews, and a role-based admin dashboard. Built with React 18, Node.js, Express, MongoDB, and Cloudinary.",
     image: '/project/trends.jpg',
     images: [
@@ -190,8 +190,8 @@ export const projects: Project[] = [
     id: 'zentrivo-technologies',
     title: 'Zentrivo Technologies',
     category: 'Web Apps',
-    description: 'Company Website & Admin Dashboard Platform.',
-    long_desc: 'Full-stack marketing site — landing page, services, portfolio, about, and contact — paired with a secured admin dashboard for managing contact-form submissions and admin accounts.',
+    description: 'Full-stack software company website with a modern public interface and secure admin dashboard. Built with React, Tailwind CSS, Node.js, Express, and MongoDB.',
+    long_desc: 'Zentrivo Technologies is a full-stack software company website with a modern public interface and a secure admin dashboard. It showcases company services, portfolio projects, testimonials, collaborations, and allows visitors to submit contact inquiries.',
     image: '/project/Software.jpg',
     images: [
       '/images/software/landing.png',
@@ -217,8 +217,8 @@ export const projects: Project[] = [
       '/images/software/review.png',
       '/images/software/simple_process.png'
     ],
-    features: ['Animated landing page', 'Services showcase', 'Admin Dashboard', 'Role-based access'],
-    tech_stack: [{ name: 'React' }, { name: 'Tailwind CSS' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
+    features: ['Responsive Company Website', 'Service Showcase', 'Contact Management', 'Secure Admin Dashboard'],
+    tech_stack: [{ name: 'React' }, { name: 'Tailwind CSS' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }, { name: 'JWT' }, { name: 'REST APIs' }, { name: 'Cloudinary' }],
     featured: 'feature',
     live_url: '#',
     github_url: '#',
@@ -229,8 +229,8 @@ export const projects: Project[] = [
     id: 'secure-track',
     title: 'Secure Track',
     category: 'Web Apps',
-    description: 'A secure tracking and monitoring application.',
-    long_desc: 'A comprehensive web application designed for secure tracking, monitoring, and service management with a focus on reliability and performance.',
+    description: 'Modern IT solutions website providing computer, networking, and tech support services, plus product sales pages. Built with Next.js, React, TypeScript, and Django.',
+    long_desc: 'Secure Track is a modern IT solutions website that provides computer, printer, networking, data recovery, maintenance, and technology support services. It also includes product sales pages for brands such as HP, Lenovo, IBM, and firewall solutions.',
     image: '/project/computer-hardware.jpg',
     images: [
       '/images/secure_trace/landing_page.png',
@@ -249,8 +249,8 @@ export const projects: Project[] = [
       '/images/secure_trace/partners.png',
       '/images/secure_trace/contact.png'
     ],
-    features: ['Secure Tracking', 'Service Management', 'Premium Services', 'Sales Monitoring'],
-    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
+    features: ['Responsive Next.js Website', 'Service and Product Pages', 'Customer Contact Forms', 'Interactive Navigation and UI'],
+    tech_stack: [{ name: 'Next.js' }, { name: 'React 19' }, { name: 'TypeScript' }, { name: 'Tailwind CSS' }, { name: 'Django' }, { name: 'FastAPI' }, { name: 'Cloudinary' }],
     featured: 'feature',
     live_url: '#',
     github_url: '#',

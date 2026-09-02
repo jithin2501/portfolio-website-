@@ -213,9 +213,6 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
               <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-primary">
                 Live Demo <ExternalLink size={16} />
               </a>
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-secondary">
-                View on GitHub <i className="fab fa-github" />
-              </a>
               {figmaUrl && (
                 <a href={figmaUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-secondary" style={{ backgroundColor: '#F24E1E', color: 'white', border: 'none' }}>
                   Figma Design <i className="fab fa-figma" />
