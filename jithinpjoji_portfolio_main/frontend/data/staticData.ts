@@ -221,6 +221,37 @@ export const projects: Project[] = [
     live_url: '#',
     github_url: '#',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind']
+  },
+  {
+    id: 'secure-track',
+    title: 'Secure Track',
+    category: 'Web Apps',
+    description: 'A secure tracking and monitoring application.',
+    long_desc: 'A comprehensive web application designed for secure tracking, monitoring, and service management with a focus on reliability and performance.',
+    image: '/project/computer-hardware.jpg',
+    images: [
+      '/images/secure_trace/landing_page.png',
+      '/images/secure_trace/aboutus.png',
+      '/images/secure_trace/more_about us.png',
+      '/images/secure_trace/services.png',
+      '/images/secure_trace/service1.png',
+      '/images/secure_trace/premiumservice.png',
+      '/images/secure_trace/premiumservice2.png',
+      '/images/secure_trace/sales.png',
+      '/images/secure_trace/support.png',
+      '/images/secure_trace/apporch.png',
+      '/images/secure_trace/vision.png',
+      '/images/secure_trace/mission.png',
+      '/images/secure_trace/why choosing.png',
+      '/images/secure_trace/partners.png',
+      '/images/secure_trace/contact.png'
+    ],
+    features: ['Secure Tracking', 'Service Management', 'Premium Services', 'Sales Monitoring'],
+    tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }],
+    featured: 'feature',
+    live_url: '#',
+    github_url: '#',
+    tags: ['React', 'Node.js', 'Express.js', 'MongoDB']
   }
 ];
 
