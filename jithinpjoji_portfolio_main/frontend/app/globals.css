@@ -57,8 +57,8 @@ button:hover, a:hover {
 }
 
 button:active, a:active {
-  transform: scale(0.96) !important;
-  transition: transform 0.12s ease-out !important;
+  transform: scale(0.98);
+  transition: transform 0.08s ease-out;
 }
 
 /* Smooth custom scrollbar */

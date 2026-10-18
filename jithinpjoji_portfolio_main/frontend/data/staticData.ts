@@ -21,29 +21,30 @@ export const aboutImage = '/me2.png';
 
 export type Tech = { id: string; name: string; color: string; slug: string; desc: string; page: number };
 export const skills: Tech[] = [
-  { id: 'c', name: 'C', color: '#A8B9CC', slug: 'c', desc: 'Low-level, performant programming language.', page: 1 },
-  { id: 'java', name: 'Java', color: '#007396', slug: 'java', desc: 'Robust, object-oriented applications.', page: 1 },
-  { id: 'javascript', name: 'JavaScript', color: '#F7DF1E', slug: 'javascript', desc: 'Dynamic client-side behavior and interactive UI.', page: 1 },
-  { id: 'python', name: 'Python', color: '#3776AB', slug: 'python', desc: 'Readable scripting and data-focused tooling.', page: 1 },
-  { id: 'html', name: 'HTML5', color: '#E34F26', slug: 'html', desc: 'Semantic markup for modern, accessible websites.', page: 1 },
-  { id: 'css', name: 'CSS3', color: '#1572B6', slug: 'css', desc: 'Responsive layouts, animations, and modern styling.', page: 1 },
-  { id: 'react', name: 'React.js', color: '#61DAFB', slug: 'react', desc: 'Component-driven UI with declarative rendering.', page: 1 },
-  { id: 'nextjs', name: 'Next.js', color: '#ffffff', slug: 'nextjs', desc: 'Fast React apps with routing and static rendering.', page: 1 }, { id: 'tailwind', name: 'Tailwind CSS', color: '#06B6D4', slug: 'tailwind', desc: 'Utility-first design for rapid UI styling.', page: 1 },
-  { id: 'bootstrap', name: 'Bootstrap', color: '#7952B3', slug: 'bootstrap', desc: 'Responsive components and grid utilities.', page: 1 },
-  { id: 'nodejs', name: 'Node.js', color: '#339933', slug: 'nodejs', desc: 'JavaScript runtime for server-side tools.', page: 1 },
-  { id: 'express', name: 'Express.js', color: '#9ca3af', slug: 'express', desc: 'Minimal web framework for Node.js.', page: 1 },
-  { id: 'ejs', name: 'EJS', color: '#A91E63', slug: 'ejs', desc: 'Templating engine for server-rendered HTML.', page: 2 },
-  { id: 'mongodb', name: 'MongoDB', color: '#47A248', slug: 'mongodb', desc: 'Flexible document database for modern apps.', page: 2 },
-  { id: 'postgresql', name: 'PostgreSQL', color: '#336791', slug: 'postgresql', desc: 'Reliable relational database for complex queries.', page: 2 },
-  { id: 'restapi', name: 'REST API', color: '#FF6C37', slug: 'rest', desc: 'Design and consumption of RESTful services.', page: 2 },
-  { id: 'git', name: 'Git', color: '#F05032', slug: 'git', desc: 'Version control and collaboration workflows.', page: 2 },
-  { id: 'github', name: 'GitHub', color: '#181717', slug: 'github', desc: 'Repository hosting and collaboration platform.', page: 2 },
-  { id: 'docker', name: 'Docker', color: '#2496ED', slug: 'docker', desc: 'Containerized development and deployment.', page: 2 },
-  { id: 'aws', name: 'AWS', color: '#FF9900', slug: 'aws', desc: 'Cloud services for hosting and deployment.', page: 2 },
-  { id: 'typescript', name: 'TypeScript', color: '#3178C6', slug: 'typescript', desc: 'Typed JavaScript for safer, scalable code.', page: 2 },
-  { id: 'cloudinary', name: 'Cloudinary', color: '#2F2ACB', slug: 'cloudinary', desc: 'Image and media management in the cloud.', page: 2 },
-  { id: 'wordpress', name: 'WordPress', color: '#21759B', slug: 'wordpress', desc: 'CMS and website building platform.', page: 2 },
-  { id: 'shopify', name: 'Shopify', color: '#95BF47', slug: 'shopify', desc: 'E-commerce platform for online stores.', page: 2 }
+  // Page 1 (12 items)
+  { id: 'javascript', name: 'JavaScript', color: '#F7DF1E', slug: 'javascript', desc: 'Dynamic client-side behavior and modern ES6+ interactivity.', page: 1 },
+  { id: 'python', name: 'Python', color: '#3776AB', slug: 'python', desc: 'Clean, versatile scripting, automation, and backend architectures.', page: 1 },
+  { id: 'html', name: 'HTML5', color: '#E34F26', slug: 'html', desc: 'Semantic, accessible, and standards-compliant web structure.', page: 1 },
+  { id: 'css', name: 'CSS3', color: '#1572B6', slug: 'css', desc: 'Responsive layouts, fluid flexbox/grid, and modern animations.', page: 1 },
+  { id: 'react', name: 'React.js', color: '#61DAFB', slug: 'react', desc: 'Component-driven interactive UI with declarative state.', page: 1 },
+  { id: 'nextjs', name: 'Next.js', color: '#ffffff', slug: 'nextjs', desc: 'Production React framework with SSR, SSG, and API routes.', page: 1 },
+  { id: 'nodejs', name: 'Node.js', color: '#339933', slug: 'nodejs', desc: 'Event-driven, non-blocking JavaScript server environment.', page: 1 },
+  { id: 'express', name: 'Express.js', color: '#9ca3af', slug: 'express', desc: 'Fast, minimalist web framework for Node.js REST services.', page: 1 },
+  { id: 'fastapi', name: 'FastAPI', color: '#009688', slug: 'fastapi', desc: 'High-performance, modern Python web API framework with async support.', page: 1 },
+  { id: 'tailwind', name: 'Tailwind CSS', color: '#06B6D4', slug: 'tailwind', desc: 'Utility-first CSS framework for rapid and responsive UI styling.', page: 1 },
+  { id: 'restapi', name: 'REST API', color: '#FF6C37', slug: 'rest', desc: 'Scalable RESTful API design, integration, and client-server architecture.', page: 1 },
+  { id: 'mongodb', name: 'MongoDB', color: '#47A248', slug: 'mongodb', desc: 'Flexible, high-performance NoSQL document-based database.', page: 1 },
+
+  // Page 2 (9 items)
+  { id: 'postgresql', name: 'PostgreSQL', color: '#336791', slug: 'postgres', desc: 'Advanced open-source relational database with ACID compliance.', page: 2 },
+  { id: 'mariadb', name: 'MariaDB', color: '#C0765A', slug: 'mariadb', desc: 'High-performance, reliable open-source relational SQL database.', page: 2 },
+  { id: 'erpnext', name: 'ERPNext', color: '#0089FF', slug: 'erpnext', desc: 'Agile open-source enterprise resource planning and business automation.', page: 2 },
+  { id: 'frappe', name: 'Frappe', color: '#0089FF', slug: 'frappe', desc: 'Full-stack meta-data driven web application framework in Python & JS.', page: 2 },
+  { id: 'docker', name: 'Docker', color: '#2496ED', slug: 'docker', desc: 'Containerized environments for seamless, reproducible deployment.', page: 2 },
+  { id: 'aws', name: 'AWS', color: '#FF9900', slug: 'aws', desc: 'Cloud infrastructure services including EC2 compute and S3 storage.', page: 2 },
+  { id: 'git', name: 'Git', color: '#F05032', slug: 'git', desc: 'Distributed version control, branching strategies, and collaboration.', page: 2 },
+  { id: 'github', name: 'GitHub', color: '#ffffff', slug: 'github', desc: 'Code repository hosting, project workflows, and CI/CD pipelines.', page: 2 },
+  { id: 'cloudinary', name: 'Cloudinary', color: '#3448C5', slug: 'cloudinary', desc: 'Cloud media storage, dynamic optimization, and asset delivery.', page: 2 }
 ];
 
 type TechStackItem = { name: string; icon: string };
@@ -274,13 +275,13 @@ export const experiences: ExperienceItem[] = [
   {
     id: 'exp-1',
     dot_color: '#818cf8',
-    date_from: 'Mar 2026',
-    date_to: 'May 2026',
-    title: 'Full Stack Developer Intern',
-    company: 'RP Studios',
-    desc: 'Developed a MERN e-commerce platform with payment workflows and backend integrations.',
-    tags: ['MERN', 'Payment', 'Backend', 'Frontend'],
-    location: 'Hebbal, Bangalore'
+    date_from: 'Jul 2026',
+    date_to: 'Ongoing',
+    title: 'Software Engineer Intern',
+    company: 'Data for Decisions Technology Solutions',
+    desc: 'Developed, tested, and maintained software features by collaborating with cross-functional teams, ensuring clean, efficient, and scalable code. Identified and resolved bugs, participated in code reviews, and contributed to improving application performance and overall software quality.',
+    tags: ['Python', 'Frappe Framework', 'ERPNext', 'JavaScript', 'MariaDB'],
+    location: 'HBR Layout, Bangalore'
   },
   {
     id: 'exp-2',
@@ -289,8 +290,8 @@ export const experiences: ExperienceItem[] = [
     date_to: 'Present',
     title: 'Freelance Full Stack Developer',
     company: 'Self-Employed',
-    desc: 'Delivered custom web applications, landing pages, and UI updates for small businesses.',
-    tags: ['Freelance', 'React', 'Next.js', 'Tailwind'],
+    desc: 'Delivered custom web applications, landing pages, and UI updates for small businesses. Delivering end-to-end solutions from conceptualization to deployment.',
+    tags: ['MongoDB', 'Express', 'React', 'Node', 'HTML', 'CSS', 'TailwindCSS', 'EJS'],
     location: 'Bangalore, India'
   }
 ];

@@ -80,7 +80,7 @@ export default function HeroCanvas() {
         else if (t < 0.9) this.color = 'rgba(255,78,205,';
         else this.color = 'rgba(0,255,136,';
       }
-      update() { this.z += this.dZ; this.theta += this.dTheta; if (this.z < -800) this.reset(false); }
+      update() { this.z += this.dZ; this.theta += this.dTheta; if (this.z < -680) this.reset(false); }
       project(px: number, py: number, pz: number) {
         const fov = 500;
         const s = fov / (fov + pz + 300);
@@ -98,7 +98,7 @@ export default function HeroCanvas() {
         const mouseGlow = Math.max(0, 1 - dist / 220);
         let zFade = 1;
         if (this.z > 400) zFade = 1 - (this.z - 400) / 400;
-        if (this.z < -600) zFade = 1 - (-600 - this.z) / 200;
+        if (this.z < -480) zFade = Math.max(0, 1 - (-480 - this.z) / 200);
 
         ctx!.globalAlpha = Math.max(0, Math.min(1, (this.alpha + mouseGlow * 0.4) * zFade));
         ctx!.drawImage(this.img, p.x - size / 2, p.y - size / 2, size, size);
@@ -138,6 +138,7 @@ export default function HeroCanvas() {
     for (let i = 0; i < maxParticles; i++) PARTS.push(new Particle());
 
     function drawBg() {
+      ctx!.globalAlpha = 1.0;
       const g = ctx!.createLinearGradient(0, 0, 0, H);
       g.addColorStop(0, '#020212'); g.addColorStop(0.5, '#050516'); g.addColorStop(1, '#08082a');
       ctx!.fillStyle = g;

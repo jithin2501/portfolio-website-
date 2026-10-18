@@ -5,12 +5,13 @@ import '../style/TechStack.css';
 
 type Tech = { id?: string; name: string; color: string; slug: string; desc: string; page: number };
 
-// skillicons.dev doesn't carry these — use Iconify's hosted simple-icons/logos sets instead
+// Custom icons for tools not provided by skillicons.dev
 const customIconMap: Record<string, string> = {
-  ejs: 'https://api.iconify.design/logos/ejs.svg',
-  cloudinary: 'https://api.iconify.design/simple-icons/cloudinary.svg?color=%232F2ACB',
-  shopify: 'https://api.iconify.design/simple-icons/shopify.svg?color=%2395BF47',
+  cloudinary: 'https://api.iconify.design/simple-icons/cloudinary.svg?color=%233448C5',
   rest: 'https://api.iconify.design/mdi/api.svg?color=%23FF6C37',
+  mariadb: '/icons/mariadb.svg',
+  erpnext: '/icons/erpnext.svg',
+  frappe: '/icons/frappe.svg',
 };
 
 const getIconSrc = (slug: string) => customIconMap[slug] || `https://skillicons.dev/icons?i=${slug}`;
@@ -124,12 +125,11 @@ export default function TechStack() {
     setIsAnimating(true);
     setIsExiting(true);
 
-    // shortened from 1200ms/1000ms — icons are already cached, so no need to wait long
     setTimeout(() => {
       setPage(prev => (prev >= maxPage ? 1 : prev + 1));
       setIsExiting(false);
-      setTimeout(() => setIsAnimating(false), 300);
-    }, 300);
+      setTimeout(() => setIsAnimating(false), 250);
+    }, 200);
   };
 
   return (
@@ -156,7 +156,7 @@ export default function TechStack() {
           <div className="tech-center-container" style={{ textAlign: 'center', marginTop: 40 }}>
             <button onClick={handlePageChange} disabled={isAnimating} className="pagination-btn">
               <span>{page === maxPage ? 'Back to Core Skills' : `View Page ${page + 1} Technologies`}</span>
-              <i className={`fas ${isAnimating ? 'fa-spinner fa-spin' : 'fa-sync-alt'}`} />
+              <i className={`fas fa-sync-alt ${isAnimating ? 'fa-spin' : ''}`} />
             </button>
           </div>
         )}

@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import {
     Calendar, Code, Smile,
-    ShoppingCart, Rocket, MapPin, Briefcase, LucideIcon
+    ShoppingCart, Rocket, Briefcase, LucideIcon
 } from 'lucide-react';
 import { experiences as staticExperiences, experienceSettings as staticExperienceSettings } from '../../data/staticData';
 import '../style/Experience.css';
@@ -34,13 +34,13 @@ const defaultEntries: ExperienceEntry[] = [
     {
         id: 'default-1',
         dot_color: '#818cf8',
-        date_from: 'Mar 2026',
-        date_to: 'May 2026',
-        title: 'Full Stack Developer Intern',
-        company: 'RP Studios',
-        desc: 'Developed a MERN e-commerce platform with Razorpay, Shiprocket, and Firebase integration. Managed containerized deployments using AWS and Docker.',
-        tags: ['MERN Stack', 'Razorpay', 'AWS Docker', 'Shiprocket', 'Firebase Auth'],
-        location: 'Hebbal, Bangalore',
+        date_from: 'Jul 2026',
+        date_to: 'Ongoing',
+        title: 'Software Engineer Intern',
+        company: 'Data for Decisions Technology Solutions',
+        desc: 'Developed, tested, and maintained software features by collaborating with cross-functional teams, ensuring clean, efficient, and scalable code. Identified and resolved bugs, participated in code reviews, and contributed to improving application performance and overall software quality.',
+        tags: ['Python', 'Frappe Framework', 'ERPNext', 'JavaScript', 'MariaDB'],
+        location: 'HBR Layout, Bangalore',
     },
     {
         id: 'default-2',
@@ -49,9 +49,9 @@ const defaultEntries: ExperienceEntry[] = [
         date_to: 'Present',
         title: 'Freelance Full Stack Developer',
         company: 'Self-Employed',
-        desc: 'Specializing in MERN stack development for startups and small businesses. Delivering end-to-end solutions from conceptualization to deployment.',
-        tags: ['MongoDB', 'Express', 'React', 'Node', 'HTML', 'CSS', 'JS', 'TailwindCSS', 'EJS'],
-        location: 'Bangalore, Kerala',
+        desc: 'Delivered custom web applications, landing pages, and UI updates for small businesses. Delivering end-to-end solutions from conceptualization to deployment.',
+        tags: ['MongoDB', 'Express', 'React', 'Node', 'HTML', 'CSS', 'TailwindCSS', 'EJS'],
+        location: 'Bangalore, India',
     },
 ];
 
@@ -64,9 +64,9 @@ const parseNumber = (str: string | undefined, fallback: number): number => {
 
 const getEntryIcon = (title: string, index: number): LucideIcon => {
     const t = title.toLowerCase();
-    if (t.includes('shop') || t.includes('e-commerce') || t.includes('intern')) return ShoppingCart;
-    if (t.includes('freelance') || t.includes('self') || t.includes('lead')) return Rocket;
     if (t.includes('code') || t.includes('developer') || t.includes('engineer')) return Code;
+    if (t.includes('shop') || t.includes('e-commerce')) return ShoppingCart;
+    if (t.includes('freelance') || t.includes('self') || t.includes('lead')) return Rocket;
     
     const icons = [Briefcase, Code, Rocket, ShoppingCart];
     return icons[index % icons.length];
@@ -198,8 +198,11 @@ function EntryCard({ e, index }: { e: ExperienceEntry; index: number }) {
                                 SELF EMPLOYED
                             </div>
                         ) : e.location ? (
-                            <div className="card-location">
-                                <MapPin size={12} />
+                            <div className="card-badge" style={{
+                                color: themeColor,
+                                borderColor: `${themeColor}33`,
+                                background: `${themeColor}0d`
+                            }}>
                                 {e.location}
                             </div>
                         ) : null}
