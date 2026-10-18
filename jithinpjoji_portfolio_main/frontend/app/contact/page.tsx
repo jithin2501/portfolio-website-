@@ -16,6 +16,7 @@ export default function ContactPage() {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [socials] = useState({
     github: socialLinks.github,
@@ -29,11 +30,42 @@ export default function ContactPage() {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (errorMessage) setErrorMessage('');
+
+    if (name === 'name' || name === 'subject') {
+      // Disallow numbers and special symbols — allow only letters and spaces
+      const alphaOnly = value.replace(/[^a-zA-Z\s]/g, '');
+      setFormData(prev => ({ ...prev, [name]: alphaOnly }));
+      return;
+    }
+
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const trimmedName = formData.name.trim();
+    if (!trimmedName || !/^[a-zA-Z\s]+$/.test(trimmedName)) {
+      setErrorMessage('Name must contain only alphabets (no numbers).');
+      return;
+    }
+
+    const trimmedEmail = formData.email.trim();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/i;
+    if (!emailRegex.test(trimmedEmail)) {
+      setErrorMessage('Email must be valid, contain "@", and end with ".com"');
+      return;
+    }
+
+    const trimmedSubject = formData.subject.trim();
+    if (!trimmedSubject || !/^[a-zA-Z\s]+$/.test(trimmedSubject)) {
+      setErrorMessage('Subject must contain only alphabets (no numbers).');
+      return;
+    }
+
+    setErrorMessage('');
     setStatus('loading');
 
     setTimeout(() => {
@@ -150,6 +182,8 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="Enter your name" 
                       className="input-field" 
+                      pattern="[A-Za-z\s]+"
+                      title="Name must contain only alphabets (no numbers)"
                       required 
                     />
                   </div>
@@ -165,6 +199,8 @@ export default function ContactPage() {
                       onChange={handleChange}
                       placeholder="Enter your email" 
                       className="input-field" 
+                      pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$"
+                      title="Email must contain '@' and end with '.com'"
                       required 
                     />
                   </div>
@@ -182,6 +218,8 @@ export default function ContactPage() {
                     onChange={handleChange}
                     placeholder="What is this about?" 
                     className="input-field" 
+                    pattern="[A-Za-z\s]+"
+                    title="Subject must contain only alphabets (no numbers)"
                     required 
                   />
                 </div>
@@ -209,6 +247,11 @@ export default function ContactPage() {
                 </button>
               </div>
 
+              {errorMessage && (
+                <p style={{ color: '#ff4e4e', marginTop: '15px', textAlign: 'center', fontSize: '14px' }}>
+                  {errorMessage}
+                </p>
+              )}
               {status === 'success' && <p style={{ color: '#00ff88', marginTop: '15px', textAlign: 'center' }}>Message sent successfully!</p>}
               {status === 'error' && <p style={{ color: '#ff4e4e', marginTop: '15px', textAlign: 'center' }}>Failed to send message.</p>}
             </form>
