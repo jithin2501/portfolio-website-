@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import { 
-  Mail, Phone, MapPin, Clock, 
-  Send, MessageSquare, 
-  Code, Heart, ExternalLink 
+import {
+  Mail, Phone, MapPin, Clock,
+  Send, MessageSquare,
+  Code, Heart, ExternalLink
 } from 'lucide-react';
 import { socialLinks } from '../../data/staticData';
 import '../style/Contact.css';
@@ -71,13 +71,13 @@ export default function ContactPage() {
       return;
     }
 
-    const accessKey = 
-      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 
-      process.env.NEXT_PUBLIC_ACCESS_KEY || 
+    const accessKey =
+      process.env.NEXTPUBLICWEB3FORMSACCESSKEY ||
+      process.env.NEXT_PUBLIC_ACCESS_KEY ||
       '';
 
     if (!accessKey) {
-      setErrorMessage('Web3Forms access key is not set. Please add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your .env file.');
+      setErrorMessage('Web3Forms access key is not set. Please add NEXTPUBLICWEB3FORMSACCESSKEY in your .env file.');
       return;
     }
 
@@ -146,7 +146,7 @@ export default function ContactPage() {
               <p className="card-desc-small" style={{ textAlign: 'center' }}>
                 I&apos;m currently available for freelance work or exciting opportunities.
               </p>
-              
+
               <div className="connect-list">
                 <a href={`mailto:${socials.email}`} className="connect-item">
                   <div className="connect-icon-box email"><Mail size={20} /></div>
@@ -215,16 +215,16 @@ export default function ContactPage() {
                   <label>Your Name</label>
                   <div className="input-wrapper">
                     <MessageSquare size={18} className="input-icon" />
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Enter your name" 
-                      className="input-field" 
+                      placeholder="Enter your name"
+                      className="input-field"
                       pattern="[A-Za-z\s]+"
                       title="Name must contain only alphabets (no numbers)"
-                      required 
+                      required
                     />
                   </div>
                 </div>
@@ -232,16 +232,16 @@ export default function ContactPage() {
                   <label>Your Email</label>
                   <div className="input-wrapper">
                     <Mail size={18} className="input-icon" />
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Enter your email" 
-                      className="input-field" 
+                      placeholder="Enter your email"
+                      className="input-field"
                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$"
                       title="Email must contain '@' and end with '.com'"
-                      required 
+                      required
                     />
                   </div>
                 </div>
@@ -251,16 +251,16 @@ export default function ContactPage() {
                 <label>Subject</label>
                 <div className="input-wrapper">
                   <MessageSquare size={18} className="input-icon" />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="What is this about?" 
-                    className="input-field" 
+                    placeholder="What is this about?"
+                    className="input-field"
                     pattern="[A-Za-z\s]+"
                     title="Subject must contain only alphabets (no numbers)"
-                    required 
+                    required
                   />
                 </div>
               </div>
@@ -269,12 +269,12 @@ export default function ContactPage() {
                 <label>Message</label>
                 <div className="input-wrapper">
                   <MessageSquare size={18} className="input-icon" style={{ top: 24 }} />
-                  <textarea 
+                  <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project..." 
-                    className="input-field textarea-field" 
+                    placeholder="Tell me about your project..."
+                    className="input-field textarea-field"
                     required
                   ></textarea>
                 </div>
