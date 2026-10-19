@@ -1,6 +1,7 @@
 'use client';
 import React, { use, useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { 
   ExternalLink, CheckCircle2, ArrowLeft, Info, Maximize2, X, ChevronLeft, ChevronRight
 } from 'lucide-react';
@@ -29,12 +30,24 @@ const getTechIconClass = (techName: string) => {
 };
 
 export default function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
+  const router = useRouter();
   const resolvedParams = use(params);
   const project = staticProjects.find((item) => item.id === resolvedParams.id) ?? staticProjects[0];
 
   const [activeThumb, setActiveThumb] = useState(0);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+
+  const handleBack = (e?: React.MouseEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    if (typeof window !== 'undefined' && window.history.length > 1) {
+      router.back();
+    } else {
+      router.push('/projects');
+    }
+  };
 
   const images = project?.images && project.images.length > 0 
     ? project.images 
@@ -86,7 +99,9 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
     ? project.tech_stack.map(t => t.name)
     : ["React.js", "Node.js", "Express.js", "MongoDB"];
 
-  const liveUrl = project.live_url || "#";
+  const liveUrl = project.live_url && project.live_url !== '#' && project.live_url.trim() !== '' 
+    ? project.live_url 
+    : null;
   const githubUrl = project.github_url || "#";
   const figmaUrl = project.figma_url;
 
@@ -105,6 +120,18 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
+            {/* Back Button outside the image box at the top left */}
+            <button 
+              type="button"
+              className="pd-back-btn" 
+              onClick={handleBack}
+              title="Go Back"
+              aria-label="Go Back"
+            >
+              <ChevronLeft size={16} />
+              <span>Back</span>
+            </button>
+
             <div 
               className="pd-main-image-wrapper"
               onClick={() => setIsFullScreen(true)}
@@ -209,16 +236,20 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
             </div>
 
             {/* Action Buttons */}
-            <div className="pd-actions-row">
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-primary">
-                Live Demo <ExternalLink size={16} />
-              </a>
-              {figmaUrl && (
-                <a href={figmaUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-secondary" style={{ backgroundColor: '#F24E1E', color: 'white', border: 'none' }}>
-                  Figma Design <i className="fab fa-figma" />
-                </a>
-              )}
-            </div>
+            {(liveUrl || figmaUrl) && (
+              <div className="pd-actions-row">
+                {liveUrl && (
+                  <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-primary">
+                    Live Demo <ExternalLink size={16} />
+                  </a>
+                )}
+                {figmaUrl && (
+                  <a href={figmaUrl} target="_blank" rel="noopener noreferrer" className="pd-btn-secondary" style={{ backgroundColor: '#F24E1E', color: 'white', border: 'none' }}>
+                    Figma Design <i className="fab fa-figma" />
+                  </a>
+                )}
+              </div>
+            )}
 
           </div>
         </div>

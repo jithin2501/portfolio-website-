@@ -147,7 +147,7 @@ export const projects: Project[] = [
     features: ['Property Listing & Search', 'Property Details & Portfolio', 'Admin Dashboard & Content Management', 'Visitor Analytics & Contact Management'],
     tech_stack: [{ name: 'React' }, { name: 'Node.js' }, { name: 'Express.js' }, { name: 'MongoDB' }, { name: 'Render' }, { name: 'Cloudinary' }, { name: 'REST API' }],
     featured: 'feature',
-    live_url: 'https://mariahomes.in/',
+    live_url: '#',
     github_url: '#',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB']
   },
