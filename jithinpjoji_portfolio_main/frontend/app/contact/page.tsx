@@ -72,14 +72,9 @@ export default function ContactPage() {
     }
 
     const accessKey =
-      process.env.NEXTPUBLICWEB3FORMSACCESSKEY ||
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
       process.env.NEXT_PUBLIC_ACCESS_KEY ||
-      '';
-
-    if (!accessKey) {
-      setErrorMessage('Web3Forms access key is not set. Please add NEXTPUBLICWEB3FORMSACCESSKEY in your .env file.');
-      return;
-    }
+      'b4b80639-8ee7-407d-bbda-5d91a908387b';
 
     setErrorMessage('');
     setStatus('loading');
