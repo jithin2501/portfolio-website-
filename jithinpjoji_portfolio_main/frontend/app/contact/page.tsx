@@ -65,16 +65,56 @@ export default function ContactPage() {
       return;
     }
 
+    const trimmedMessage = formData.message.trim();
+    if (!trimmedMessage) {
+      setErrorMessage('Please enter your message.');
+      return;
+    }
+
+    const accessKey = 
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 
+      process.env.NEXT_PUBLIC_ACCESS_KEY || 
+      '';
+
+    if (!accessKey) {
+      setErrorMessage('Web3Forms access key is not set. Please add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your .env file.');
+      return;
+    }
+
     setErrorMessage('');
     setStatus('loading');
 
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => {
-        setStatus('idle');
-      }, 4000);
-    }, 600);
+    try {
+      const formPayload = new FormData();
+      formPayload.append('access_key', accessKey);
+      formPayload.append('name', trimmedName);
+      formPayload.append('email', trimmedEmail);
+      formPayload.append('subject', trimmedSubject);
+      formPayload.append('message', trimmedMessage);
+      formPayload.append('from_name', trimmedName);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formPayload,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => {
+          setStatus('idle');
+        }, 5000);
+      } else {
+        setStatus('error');
+        setErrorMessage(data.message || 'Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      console.error('Contact submission error:', err);
+      setStatus('error');
+      setErrorMessage('Something went wrong. Please check your network connection and try again.');
+    }
   };
 
   return (
@@ -253,7 +293,7 @@ export default function ContactPage() {
                 </p>
               )}
               {status === 'success' && <p style={{ color: '#00ff88', marginTop: '15px', textAlign: 'center' }}>Message sent successfully!</p>}
-              {status === 'error' && <p style={{ color: '#ff4e4e', marginTop: '15px', textAlign: 'center' }}>Failed to send message.</p>}
+              {status === 'error' && !errorMessage && <p style={{ color: '#ff4e4e', marginTop: '15px', textAlign: 'center' }}>Failed to send message.</p>}
             </form>
           </div>
         </div>
